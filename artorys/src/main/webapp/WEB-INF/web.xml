@@ -10,8 +10,18 @@
   	<description></description>
   	<servlet-class>br.com.artorys.servlets.ServletCadastro</servlet-class>
   </servlet>
+  <servlet>
+  	<servlet-name>ServletTela</servlet-name>
+  	<display-name>ServletTela</display-name>
+  	<description></description>
+  	<servlet-class>br.com.artorys.servlets.ServletTela</servlet-class>
+  </servlet>
   <servlet-mapping>
   	<servlet-name>ServletCadastro</servlet-name>
   	<url-pattern>/ServletCadastro</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>ServletTela</servlet-name>
+  	<url-pattern>/ServletTela</url-pattern>
   </servlet-mapping>
 </web-app>
