@@ -25,11 +25,15 @@ div.a {
 }
 
 div.b {
-	text-align: center; 
-	color : black;
+	text-align: center;
+	color: black;
 	font-size: 15px;
 	font-family: "calibri";
 	color: black;
+}
+
+div.d {
+	
 }
 </style>
 </head>
@@ -64,6 +68,19 @@ div.b {
 			que se ligam através de portais mágicos e paisagens ermas onde só<br>
 			se chegam com barcos voadores.
 		</h2>
+	</div>
+	<div class="d">
+		<fieldset>
+			<legend>Novidades</legend>
+			<center>
+				<h2>Áudio-Drama</h2>
+			</center>
+			<img
+				src="https://jovemnerd.com.br/wp-content/uploads/2018/08/riverrun-castle-760x428.png"
+				width="215" height="140">
+		</fieldset>
+
+
 	</div>
 </body>
 </html>
