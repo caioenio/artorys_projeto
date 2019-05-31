@@ -1,0 +1,36 @@
+.menu ul{
+    list-style-type: none;
+    width: 100%;
+    border-style: solid;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-width: 100%;
+    padding: 10px;
+}
+
+.menu ul li{
+    display: inline;
+    margin: 7px;
+}
+ 
+.menu ul li a {
+    text-decoration: none;
+    color: black;
+    font-family: 'Cinzel';
+    padding: 6px;
+}
+
+.menu ul li:hover {
+	background-color: #4a4c4f;
+    border-radius: 10px;
+    padding-top: 10px;
+    padding-right: 4px;
+    padding-left: 4px;
+    padding-bottom: 10px;
+}
+
+.menu {
+    margin-bottom: 10px;
+    
+}
