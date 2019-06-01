@@ -34,12 +34,13 @@ public class ServletCadastro extends HttpServlet {
 		DAO dao = new DAO();
 		Cliente cliente = new Cliente();
 		cliente.setNome(request.getParameter("nome"));
-		cliente.setCpf(request.getParameter("cpf"));
-		cliente.setTelefone(request.getParameter("telefone"));
-		cliente.setEmail(request.getParameter("email"));
-		cliente.setSenha(request.getParameter("senha"));
-		dao.Insert(cliente);
-		response.getWriter().print("DADOS SALVOS!!");
+
+		if (cliente.getNome() != null) {
+			request.setAttribute("mensagem", "O nome não pode ser nulo");
+		} else {
+			dao.Insert(cliente);
+			response.getWriter().print("DADOS SALVOS!!");
+		}
 	}
 
 }

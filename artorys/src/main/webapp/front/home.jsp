@@ -69,7 +69,7 @@
                             Senha<br> <input type="text" size="13"><br>
                             <br>
                             <input class="botao" type="submit" value="Login" size="13"><br><br>
-                           <a href="cadastro.jsp"><button>Cadastra-se</button></a>
+                            <a href="cadastro.jsp"><button>Cadastra-se</button></a>
                         </form>
                     </div>
                     <h1>Home</h1>
