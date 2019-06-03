@@ -10,10 +10,20 @@ import br.com.artorys.interfaces.Entidade;
 public class Cliente extends Usuario implements Entidade {
 	@Column(name = "DS_TELEFONE")
 	private String telefone;
-	@OneToOne(mappedBy = "cliente")
-	private Endereco endereco;
 	@Column(name = "NM_CPF")
 	private String cpf;
+	@OneToOne()
+	private Endereco endereco;
+	@OneToOne()
+	private Cartao cartao;
+
+	public Cartao getCartao() {
+		return cartao;
+	}
+
+	public void setCartao(Cartao cartao) {
+		this.cartao = cartao;
+	}
 
 	public String getTelefone() {
 		return telefone;

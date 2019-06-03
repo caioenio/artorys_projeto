@@ -9,7 +9,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import br.com.artorys.dao.DAO;
+import br.com.artorys.modelo.Cartao;
 import br.com.artorys.modelo.Cliente;
+import br.com.artorys.modelo.Endereco;
 
 @WebServlet(urlPatterns = "/cadastro")
 public class ServletCadastro extends HttpServlet {
@@ -31,16 +33,30 @@ public class ServletCadastro extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
-		DAO dao = new DAO();
-		Cliente cliente = new Cliente();
-		cliente.setNome(request.getParameter("nome"));
-
-		if (cliente.getNome() != null) {
-			request.setAttribute("mensagem", "O nome não pode ser nulo");
-		} else {
+	
+			Cliente cliente = new Cliente();
+			DAO dao = new DAO();
+			Endereco endereco = new Endereco();
+			Cartao cartao = new Cartao();
+			
+			cliente.setNome(request.getParameter("nome"));
+			cliente.setSobrenome(request.getParameter("sobrenome"));
+			cliente.setDt_nascimento(request.getParameter("nascimento"));
+			cliente.setCpf(request.getParameter("cpf"));
+			cliente.setTelefone(request.getParameter("telefone"));
+			endereco.setCidade(request.getParameter("cidade"));
+			endereco.setBairro(request.getParameter("bairro"));
+			endereco.setCep(request.getParameter("cep"));
+			endereco.setRua(request.getParameter("rua"));
+			endereco.setNumero(Integer.parseInt(request.getParameter("numero")));
+			endereco.setComplemento(request.getParameter("complemento"));
+			cartao.setCodigo(Integer.parseInt(request.getParameter("numero-cartao")));
+			cliente.setEmail(request.getParameter("email"));
+			cliente.setSenha(request.getParameter("senha"));
+			cliente.setEndereco(endereco);
+			cliente.setCartao(cartao);
 			dao.Insert(cliente);
-			response.getWriter().print("DADOS SALVOS!!");
-		}
+			
 	}
 
 }

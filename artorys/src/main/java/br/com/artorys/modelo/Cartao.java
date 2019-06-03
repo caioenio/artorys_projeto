@@ -5,6 +5,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
+
 import br.com.artorys.interfaces.Entidade;
 
 @Entity
@@ -15,6 +17,8 @@ public class Cartao implements Entidade {
 	private int codigo;
 	@Column(name = "DS_CARTAO")
 	private String descricao;
+	@OneToOne(mappedBy = "cliente")
+	private Cliente cliente;
 
 	public int getCodigo() {
 		return codigo;

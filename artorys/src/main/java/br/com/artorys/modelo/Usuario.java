@@ -18,6 +18,36 @@ public class Usuario {
 	private String senha;
 	@Column(name = "DS_USUARIO")
 	private String nome;
+	@Column(name = "DS_SOBRENOME")
+	private String sobrenome;
+	@Column(name = "Ds_Nascimento")
+	private String dt_nascimento;
+	@Column(name = "Ds_SEXO")
+	private String sexo;
+
+	public String getSobrenome() {
+		return sobrenome;
+	}
+
+	public void setSobrenome(String sobrenome) {
+		this.sobrenome = sobrenome;
+	}
+
+	public String getDt_nascimento() {
+		return dt_nascimento;
+	}
+
+	public void setDt_nascimento(String dt_nascimento) {
+		this.dt_nascimento = dt_nascimento;
+	}
+
+	public String getSexo() {
+		return sexo;
+	}
+
+	public void setSexo(String sexo) {
+		this.sexo = sexo;
+	}
 
 	public int getId() {
 		return id;

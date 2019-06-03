@@ -2,11 +2,11 @@
     background-color: black;
     color: #F2FFFC;
     padding: 15px;
-    position: absolute;
+    position: inherit;
     bottom: 0px;
     width: 100%;
     text-align: center;
     clear: left;
     clear: right;
-    left: 0px;
+
 }

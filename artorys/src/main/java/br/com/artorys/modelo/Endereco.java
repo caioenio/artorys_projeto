@@ -16,7 +16,7 @@ public class Endereco implements Entidade {
 	@Column(name = "CD_ENDERECO")
 	private int id;
 	@Column(name = "NM_CEP")
-	private int cep;
+	private String cep;
 	@Column(name = "DS_RUA")
 	private String rua;
 	@Column(name = "NM_CASA")
@@ -29,8 +29,17 @@ public class Endereco implements Entidade {
 	private String cidade;
 	@Column(name = "DS_UF")
 	private String uf;
-	@OneToOne()
+
+	@OneToOne(mappedBy = "cliente")
 	private Cliente cliente;
+
+	public String getCep() {
+		return cep;
+	}
+
+	public void setCep(String cep) {
+		this.cep = cep;
+	}
 
 	public int getId() {
 		return id;
@@ -38,14 +47,6 @@ public class Endereco implements Entidade {
 
 	public void setId(int id) {
 		this.id = id;
-	}
-
-	public int getCep() {
-		return cep;
-	}
-
-	public void setCep(int cep) {
-		this.cep = cep;
 	}
 
 	public String getRua() {

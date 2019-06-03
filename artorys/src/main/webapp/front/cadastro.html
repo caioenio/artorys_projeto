@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset='utf-8'>
+<title>Cadastro</title>
+<link rel="icon" href="../imagem/40431.png">
+<link rel='stylesheet' href="../css/normalize.css">
+<link rel='stylesheet' href="../css/menu.css">
+<link rel='stylesheet' href="../css/rodape.css">
+<link rel='stylesheet' href="../css/principal.css">
+<link rel='stylesheet' href="../css/fundo.css">
+<link rel='stylesheet' href="../css/home.css">
+<link rel='stylesheet' href="../css/conteudo.css">
+<link href="https://fonts.googleapis.com/css?family=Cinzel&display=swap"
+	rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Ranga&display=swap"
+	rel="stylesheet">
+</head>
+
+<body>
+	<div class="fundo">
+		<div class="divisao_principal">
+
+			<div class="cabecalho-formulario">
+
+				<h1>Formulário de Cadrastro</h1>
+			</div>
+			<div class="conteudo-pincipal">
+				<form action="/artorys/cadastro" method="post">
+					<label>Nome</label> <br> <input type="text" name="nome">
+					<br> <br> <label>Sobrenome</label> <br> <input
+						type="text" name="sobrenome"> <br> <br> <label>Data
+						de nascimento</label> <br> <input type="date" name="nascimento">
+					<br> <br> <label>Sexo</label> <br> <select
+						class="precos">
+						<option>selecionar</option>
+						<option>Masculino</option>
+						<option>Feminino</option>
+					</select> <br> <br> <label>CPF</label> <br> <input
+						type="text" name="cpf"> <br> <br> <label>Telefone</label>
+					<br> <input type="text" name="telefone"> <br> <br>
+					<div class="endereco">
+						<div>
+							<label>estado</label> <br> <select name="estados-brasil">
+								<option value="AC">Acre</option>
+								<option value="AL">Alagoas</option>
+								<option value="AP">Amapá</option>
+								<option value="AM">Amazonas</option>
+								<option value="BA">Bahia</option>
+								<option value="CE">Ceará</option>
+								<option value="DF">Distrito Federal</option>
+								<option value="ES">Espírito Santo</option>
+								<option value="GO">Goiás</option>
+								<option value="MA">Maranhão</option>
+								<option value="MT">Mato Grosso</option>
+								<option value="MS">Mato Grosso do Sul</option>
+								<option value="MG">Minas Gerais</option>
+								<option value="PA">Pará</option>
+								<option value="PB">Paraíba</option>
+								<option value="PR">Paraná</option>
+								<option value="PE">Pernambuco</option>
+								<option value="PI">Piauí</option>
+								<option value="RJ">Rio de Janeiro</option>
+								<option value="RN">Rio Grande do Norte</option>
+								<option value="RS">Rio Grande do Sul</option>
+								<option value="RO">Rondônia</option>
+								<option value="RR">Roraima</option>
+								<option value="SC">Santa Catarina</option>
+								<option value="SP">São Paulo</option>
+								<option value="SE">Sergipe</option>
+								<option value="TO">Tocantins</option>
+							</select>
+						</div>
+						<div>
+							<label>Cidade</label> <br> <input type="text" name="cidade">
+						</div>
+						<div>
+							<label>Bairro</label> <br> <input type="text" name="bairro">
+						</div>
+						<div>
+							<label>CEP</label> <br> <input class="cep" type="text"
+								name="cep">
+						</div>
+						<div>
+							<label>Rua</label> <br> <input class="rua" type="text"
+								name="rua">
+						</div>
+						<div>
+							<label>Nº</label> <br> <input class="numero" type="text"
+								name="numero">
+						</div>
+						<div>
+							<label>Complemento</label> <br> <input class="complemento"
+								type="text" name="complemento">
+						</div>
+					</div>
+					<br>
+					<div class="div-cartao">
+						<div>
+							<label>Bandeira</label> <br> <select class="tipo-cartao">
+								<option>selecionar</option>
+								<option>Visa</option>
+								<option>MasterCard</option>
+							</select>
+						</div>
+						<div>
+							<label>Número do Cartão</label> <br> <input
+								class="numero-cartao" type="text" name="numero-cartao">
+						</div>
+					</div>
+					<br> <br> <br>
+					<div class="email-senha">
+						<label>E-mail</label> <br> <input class="email" type="text"
+							name="email"> <br> <br> <label>Senha</label> <br>
+						<input class="senha" type="password" name="senha"> <br>
+						<br> <label>Senha</label> <br> <input class="senha"
+							type="password" name="senha"> <br> <br> <br>
+						<input type="submit" size="13" value="CADASTRAR"><br>
+					</div>
+					<br> <br> <br> <br> <br> <br>
+				</form>
+
+
+			</div>
+			<footer id="rodape-pagina"> &copy; Cataclysm </footer>
+			</main>
+		</div>
+	</div>
+</body>
+
+</html>

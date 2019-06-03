@@ -1,36 +1,37 @@
 .menu ul{
     list-style-type: none;
     width: 100%;
-    border-style: solid;
-    border-top: none;
-    border-left: none;
-    border-right: none;
-    border-width: 100%;
     padding: 10px;
 }
 
 .menu ul li{
     display: inline;
-    margin: 7px;
+    font-size: 22px;
+    margin: 6px;
 }
  
 .menu ul li a {
     text-decoration: none;
     color: black;
     font-family: 'Cinzel';
-    padding: 6px;
 }
 
 .menu ul li:hover {
-	background-color: #4a4c4f;
+    background-color: black;
     border-radius: 10px;
-    padding-top: 10px;
-    padding-right: 4px;
-    padding-left: 4px;
-    padding-bottom: 10px;
+    margin: 0px;
+    padding: 6px;
+}
+
+
+.menu ul li a span:hover{
+    color: white;
 }
 
 .menu {
     margin-bottom: 10px;
-    
+    border-style: solid;
+    border-color: black;
+    border-width: 0px 0px 4px 0px;
+
 }
