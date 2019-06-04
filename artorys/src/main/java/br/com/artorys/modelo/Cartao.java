@@ -38,9 +38,6 @@ public class Cartao implements Entidade {
 		this.numero = numero;
 	}
 
-	@Column(name = "DS_CARTAO")
-	private String descricao;
-	
 	@ManyToOne()
 	private Cliente cliente;
 	
@@ -58,14 +55,6 @@ public class Cartao implements Entidade {
 
 	public void setCodigo(int codigo) {
 		this.codigo = codigo;
-	}
-
-	public String getDescricao() {
-		return descricao;
-	}
-
-	public void setDescricao(String descricao) {
-		this.descricao = descricao;
 	}
 
 	public Object pegarChavePrimaria() {

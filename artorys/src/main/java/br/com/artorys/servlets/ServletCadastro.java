@@ -49,12 +49,13 @@ public class ServletCadastro extends HttpServlet {
 			endereco.setBairro(request.getParameter("bairro"));
 			endereco.setCep(request.getParameter("cep"));
 			endereco.setRua(request.getParameter("rua"));
-			endereco.setNumero(Integer.parseInt(request.getParameter("numero")));
+			endereco.setNumero(request.getParameter("numero_casa"));
 			endereco.setComplemento(request.getParameter("complemento"));
-			endereco.setComplemento(request.getParameter("estados-brasil"));
+			endereco.setEstado(request.getParameter("estados-brasil"));
 			cliente.setNome(request.getParameter("nome"));
 			cliente.setSobrenome(request.getParameter("sobrenome"));
 			cliente.setDt_nascimento(request.getParameter("nascimento"));
+			cliente.setSexo(request.getParameter("sexo"));
 			cliente.setCpf(request.getParameter("cpf"));
 			cliente.setTelefone(request.getParameter("telefone"));
 			cliente.setEmail(request.getParameter("email"));

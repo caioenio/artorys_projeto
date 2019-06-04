@@ -20,15 +20,13 @@ public class Endereco implements Entidade {
 	@Column(name = "DS_RUA")
 	private String rua;
 	@Column(name = "NM_CASA")
-	private int numero;
+	private String numero;
 	@Column(name = "DS_COMPLEMENTO")
 	private String complemento;
 	@Column(name = "DS_BAIRRO")
 	private String bairro;
 	@Column(name = "DS_CIDADE")
 	private String cidade;
-	@Column(name = "DS_UF")
-	private String uf;
 	@Column(name = "DS_ESTADO")
 	private String estado;
 	
@@ -67,11 +65,11 @@ public class Endereco implements Entidade {
 		this.rua = rua;
 	}
 
-	public int getNumero() {
+	public String getNumero() {
 		return numero;
 	}
 
-	public void setNumero(int numero) {
+	public void setNumero(String numero) {
 		this.numero = numero;
 	}
 
@@ -98,15 +96,6 @@ public class Endereco implements Entidade {
 	public void setCidade(String cidade) {
 		this.cidade = cidade;
 	}
-
-	public String getUf() {
-		return uf;
-	}
-
-	public void setUf(String uf) {
-		this.uf = uf;
-	}
-
 	public Cliente getCliente() {
 		return cliente;
 	}

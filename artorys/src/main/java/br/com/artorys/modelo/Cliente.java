@@ -15,6 +15,8 @@ public class Cliente extends Usuario implements Entidade {
 	private String telefone;
 	@Column(name = "NM_CPF")
 	private String cpf;
+	@Column(name = "DS_SEXO")
+	private String sexo;
 	
 	@OneToOne(mappedBy = "cliente")
 	private Endereco endereco;
@@ -22,6 +24,14 @@ public class Cliente extends Usuario implements Entidade {
 	private List<Cartao> cartao;
 
 
+
+	public String getSexo() {
+		return sexo;
+	}
+
+	public void setSexo(String sexo) {
+		this.sexo = sexo;
+	}
 
 	public List<Cartao> getCartao() {
 		return cartao;

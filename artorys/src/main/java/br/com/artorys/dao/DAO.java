@@ -4,7 +4,6 @@ import javax.persistence.EntityManager;
 
 import br.com.artorys.interfaces.Entidade;
 import br.com.artorys.interfaces.InterfaceDAO;
-import br.com.artorys.util.JPAUtil;
 
 public class DAO implements InterfaceDAO {
 

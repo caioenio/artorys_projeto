@@ -3,28 +3,6 @@
 <head>
 <meta charset='utf-8'>
 <title>Cadastro</title>
-<script type="text/javascript">
-	function validar() {
-		var nome = valida_cadastro.nome.value;
-		var sobrenome = valida_cadastro.sobrenome.value;
-		var nascimento = valida_cadastro.nascimento.value;
-
-		if (nome == "") {
-			alert("Por favor, informe o nome");
-			valida_cadastro.nome.focus();
-			return false;
-		}
-		if (sobrenome == "") {
-			alert("Por favor, informe o sobrenome");
-			valida_cadastro.sobrenome.focus();
-			return false;
-		}
-		if (nascimento == "") {
-			alert("Por favor, informe a data de nascimento");
-			return false;
-		}
-	}
-</script>
 <link rel="icon" href="../imagem/40431.png">
 <link rel='stylesheet' href="../css/normalize.css">
 <link rel='stylesheet' href="../css/menu.css">
@@ -50,22 +28,22 @@
 				<h1>Formulário de Cadastro</h1>
 			</div>
 			<div class="conteudo-pincipal">
-				<form name="valida_cadastro" action="/artorys/cadastro" method="post">
-					<label>Nome</label> <br> <input type="text" name="nome">
+				<form  action="" method="post">
+					<label>Nome</label> <br> <input type="text" name="nome" required>
 					<br> <br> <label>Sobrenome</label> <br> <input
-						type="text" name="sobrenome"> <br> <br> <label>Data
-						de nascimento</label> <br> <input type="date" name="nascimento">
+						type="text" name="sobrenome" required> <br> <br> <label>Data
+						de nascimento</label> <br> <input type="date" name="nascimento" required>
 					<br> <br> <label>Sexo</label> <br> <select
-						class="precos">
+						class="precos" name="sexo" required>
 						<option>selecionar</option>
 						<option>Masculino</option>
 						<option>Feminino</option>
 					</select> <br> <br> <label>CPF</label> <br> <input
-						type="text" name="cpf"> <br> <br> <label>Telefone</label>
-					<br> <input type="text" name="telefone"> <br> <br>
+						type="text" name="cpf" required> <br> <br> <label>Telefone</label>
+					<br> <input type="text" name="telefone" required> <br> <br>
 					<div class="endereco">
 						<div>
-							<label>estado</label> <br> <select name="estados-brasil">
+							<label>estado</label> <br> <select name="estados-brasil" required>
 								<option value="AC">Acre</option>
 								<option value="AL">Alagoas</option>
 								<option value="AP">Amapá</option>
@@ -96,32 +74,33 @@
 							</select>
 						</div>
 						<div>
-							<label>Cidade</label> <br> <input type="text" name="cidade">
+							<label>Cidade</label> <br> <input type="text" name="cidade" required>
 						</div>
 						<div>
-							<label>Bairro</label> <br> <input type="text" name="bairro">
+							<label>Bairro</label> <br> <input type="text" name="bairro" required>
 						</div>
 						<div>
 							<label>CEP</label> <br> <input class="cep" type="text"
-								name="cep">
+								name="cep" required>
 						</div>
 						<div>
 							<label>Rua</label> <br> <input class="rua" type="text"
-								name="rua">
+								name="rua" required>
 						</div>
 						<div>
 							<label>Nº</label> <br> <input class="numero" type="text"
-								name="numero">
+								name="numero_casa" required>
 						</div>
 						<div>
 							<label>Complemento</label> <br> <input class="complemento"
-								type="text" name="complemento">
+								type="text" name="complemento" required>
 						</div>
 					</div>
 					<br>
 					<div class="div-cartao">
 						<div>
-							<label>Bandeira</label> <br> <select class="tipo-cartao" name="bandeira" >
+							<label>Bandeira</label> <br> <select class="tipo-cartao"
+								name="bandeira" required>
 								<option>selecionar</option>
 								<option>Visa</option>
 								<option>MasterCard</option>
@@ -129,18 +108,18 @@
 						</div>
 						<div>
 							<label>Número do Cartão</label> <br> <input
-								class="numero-cartao" type="text" name="numero-cartao">
+								class="numero-cartao" type="text" name="numero-cartao" required>
 						</div>
 					</div>
 					<br> <br> <br>
 					<div class="email-senha">
-						<label>E-mail</label> <br> <input class="email" type="text"
-							name="email"> <br> <br> <label>Senha</label> <br>
-						<input class="senha" type="password" name="senha"> <br>
-						<br> <label>Confirmar Senha</label> <br> <input class="confirma_senha"
-							type="password" name="senha"> <br> <br> <br>
-						<input type="submit" size="13" value="CADASTRAR"
-							onclick="return validar()"><br>
+						<label>E-mail</label> <br> <input class="email" type="email"
+							name="email" required> <br> <br> <label>Senha</label> <br>
+						<input class="senha" type="password" name="senha" required> <br>
+						<br> <label>Confirmar Senha</label> <br> <input
+							class="confirma_senha" type="password" name="senha" required> <br>
+						<br> <br> <input type="submit" size="13"
+							value="CADASTRAR"><br>
 					</div>
 					<br> <br> <br> <br> <br> <br>
 				</form>
