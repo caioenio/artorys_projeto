@@ -1,6 +1,8 @@
 package br.com.artorys.servlets;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -12,6 +14,7 @@ import br.com.artorys.dao.DAO;
 import br.com.artorys.modelo.Cartao;
 import br.com.artorys.modelo.Cliente;
 import br.com.artorys.modelo.Endereco;
+import br.com.artorys.util.JPAUtil;
 
 @WebServlet(urlPatterns = "/cadastro")
 public class ServletCadastro extends HttpServlet {
@@ -35,26 +38,32 @@ public class ServletCadastro extends HttpServlet {
 
 	
 			Cliente cliente = new Cliente();
-			DAO dao = new DAO();
 			Endereco endereco = new Endereco();
 			Cartao cartao = new Cartao();
+			List<Cartao> cartoes = new ArrayList<Cartao>(); 
+			DAO dao = new DAO(JPAUtil.getEntityManager());
 			
-			cliente.setNome(request.getParameter("nome"));
-			cliente.setSobrenome(request.getParameter("sobrenome"));
-			cliente.setDt_nascimento(request.getParameter("nascimento"));
-			cliente.setCpf(request.getParameter("cpf"));
-			cliente.setTelefone(request.getParameter("telefone"));
+			cartao.setBandeira(request.getParameter("bandeira"));
+			cartao.setNumero(Integer.parseInt(request.getParameter("numero-cartao")));
 			endereco.setCidade(request.getParameter("cidade"));
 			endereco.setBairro(request.getParameter("bairro"));
 			endereco.setCep(request.getParameter("cep"));
 			endereco.setRua(request.getParameter("rua"));
 			endereco.setNumero(Integer.parseInt(request.getParameter("numero")));
 			endereco.setComplemento(request.getParameter("complemento"));
-			cartao.setCodigo(Integer.parseInt(request.getParameter("numero-cartao")));
+			endereco.setComplemento(request.getParameter("estados-brasil"));
+			cliente.setNome(request.getParameter("nome"));
+			cliente.setSobrenome(request.getParameter("sobrenome"));
+			cliente.setDt_nascimento(request.getParameter("nascimento"));
+			cliente.setCpf(request.getParameter("cpf"));
+			cliente.setTelefone(request.getParameter("telefone"));
 			cliente.setEmail(request.getParameter("email"));
 			cliente.setSenha(request.getParameter("senha"));
 			cliente.setEndereco(endereco);
-			cliente.setCartao(cartao);
+			cartoes.add(cartao);
+			cliente.setCartao(cartoes);
+			dao.Insert(cartao);
+			dao.Insert(endereco);
 			dao.Insert(cliente);
 			
 	}

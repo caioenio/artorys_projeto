@@ -1,4 +1,4 @@
 .fundo {
-    background-image:  url(""webapp/imagem/fundo.png"");
+    background-image:  url('../imagem/fundo.png');
     background-attachment: fixed;
 }

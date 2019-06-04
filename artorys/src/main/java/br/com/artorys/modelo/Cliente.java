@@ -1,7 +1,10 @@
 package br.com.artorys.modelo;
 
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 
 import br.com.artorys.interfaces.Entidade;
@@ -12,16 +15,19 @@ public class Cliente extends Usuario implements Entidade {
 	private String telefone;
 	@Column(name = "NM_CPF")
 	private String cpf;
-	@OneToOne()
+	
+	@OneToOne(mappedBy = "cliente")
 	private Endereco endereco;
-	@OneToOne()
-	private Cartao cartao;
+	@OneToMany(mappedBy = "cliente")
+	private List<Cartao> cartao;
 
-	public Cartao getCartao() {
+
+
+	public List<Cartao> getCartao() {
 		return cartao;
 	}
 
-	public void setCartao(Cartao cartao) {
+	public void setCartao(List<Cartao> cartao) {
 		this.cartao = cartao;
 	}
 

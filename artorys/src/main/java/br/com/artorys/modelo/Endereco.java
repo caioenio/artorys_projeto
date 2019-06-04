@@ -29,8 +29,18 @@ public class Endereco implements Entidade {
 	private String cidade;
 	@Column(name = "DS_UF")
 	private String uf;
+	@Column(name = "DS_ESTADO")
+	private String estado;
+	
+	public String getEstado() {
+		return estado;
+	}
 
-	@OneToOne(mappedBy = "cliente")
+	public void setEstado(String estado) {
+		this.estado = estado;
+	}
+
+	@OneToOne
 	private Cliente cliente;
 
 	public String getCep() {

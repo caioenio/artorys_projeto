@@ -8,7 +8,11 @@ import br.com.artorys.util.JPAUtil;
 
 public class DAO implements InterfaceDAO {
 
-	private EntityManager em = JPAUtil.getEntityManager();
+	private EntityManager em;
+	
+	public  DAO(EntityManager em) {
+		this.em = em;
+	}
 
 	public void Insert(Entidade entidade) {
 		em.getTransaction().begin();
