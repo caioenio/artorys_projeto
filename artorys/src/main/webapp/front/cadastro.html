@@ -4,24 +4,27 @@
 <meta charset='utf-8'>
 <title>Cadastro</title>
 <script type="text/javascript">
-function SomenteNumero(e){
-    var tecla=(window.event)?event.keyCode:e.which;   
-    if((tecla>47 && tecla<58)) return true;
-    else{
-    	if (tecla==8 || tecla==0) return true;
-	else  return false;
-    }
-}
-function somente_letras(campo){
-	var digits="abcdefghijklmnopqrstuvwyxz"
-	var campo_temp
-	for (var i=0;i<campo.value.length;i++){
-	campo_temp=campo.value.substring(i,i+1)
-	if (digits.indexOf(campo_temp)==-1){
-	campo.value = campo.value.substring(0,i);
-	break;
+	function SomenteNumero(e) {
+		var tecla = (window.event) ? event.keyCode : e.which;
+		if ((tecla > 47 && tecla < 58))
+			return true;
+		else {
+			if (tecla == 8 || tecla == 0)
+				return true;
+			else
+				return false;
+		}
 	}
-	}
+	function somente_letras(campo) {
+		var digits = "abcdefghijklmnopqrstuvwyxz"
+		var campo_temp
+		for (var i = 0; i < campo.value.length; i++) {
+			campo_temp = campo.value.substring(i, i + 1)
+			if (digits.indexOf(campo_temp) == -1) {
+				campo.value = campo.value.substring(0, i);
+				break;
+			}
+		}
 	}
 </script>
 <link rel="icon" href="../imagem/40431.png">
@@ -49,22 +52,34 @@ function somente_letras(campo){
 				<h1>Formulário de Cadastro</h1>
 			</div>
 			<div class="conteudo-pincipal">
-				<form name="form" action="" method="post">
-					<label>Nome</label> <br> <input type="text" name="nome" onKeyUp="javascript:somente_letras(this);"  required>
-					<br> <br> <label>Sobrenome</label> <br> <input
-						type="text" name="sobrenome" onKeyUp="javascript:somente_letras(this);" required> <br> <br> <label>Data
-						de nascimento</label> <br> <input type="date" name="nascimento" required>
+				<form action="home.html">
+					<input type="submit" class="cadastrar" value="Voltar">
+				</form>
+				<br>
+				<br>
+				<br>
+				<form name="form" action="/artorys/cadastro" method="post">
+					<label>Nome</label> <br> <input type="text" name="nome"
+						onKeyUp="javascript:somente_letras(this);" required> <br>
+					<br> <label>Sobrenome</label> <br> <input type="text"
+						name="sobrenome" onKeyUp="javascript:somente_letras(this);"
+						required> <br> <br> <label>Data de
+						nascimento</label> <br> <input type="date" name="nascimento" required>
 					<br> <br> <label>Sexo</label> <br> <select
 						class="precos" name="sexo" required>
 						<option>selecionar</option>
 						<option>Masculino</option>
 						<option>Feminino</option>
 					</select> <br> <br> <label>CPF</label> <br> <input
-						type="text" name="cpf" onkeypress='return SomenteNumero(event)'required> <br> <br> <label>Telefone</label>
-					<br> <input type="text" name="telefone" onkeypress='return SomenteNumero(event)' required> <br> <br>
+						type="text" name="cpf" onkeypress='return SomenteNumero(event)'
+						required> <br> <br> <label>Telefone</label> <br>
+					<input type="text" name="telefone"
+						onkeypress='return SomenteNumero(event)' required> <br>
+					<br>
 					<div class="endereco">
 						<div>
-							<label>estado</label> <br> <select name="estados-brasil" required>
+							<label>estado</label> <br> <select name="estados-brasil"
+								required>
 								<option value="AC">Acre</option>
 								<option value="AL">Alagoas</option>
 								<option value="AP">Amapá</option>
@@ -95,10 +110,12 @@ function somente_letras(campo){
 							</select>
 						</div>
 						<div>
-							<label>Cidade</label> <br> <input type="text" name="cidade" onKeyUp="javascript:somente_letras(this);" required>
+							<label>Cidade</label> <br> <input type="text" name="cidade"
+								onKeyUp="javascript:somente_letras(this);" required>
 						</div>
 						<div>
-							<label>Bairro</label> <br> <input type="text" name="bairro" onKeyUp="javascript:somente_letras(this);" required>
+							<label>Bairro</label> <br> <input type="text" name="bairro"
+								onKeyUp="javascript:somente_letras(this);" required>
 						</div>
 						<div>
 							<label>CEP</label> <br> <input class="cep" type="text"
@@ -110,7 +127,8 @@ function somente_letras(campo){
 						</div>
 						<div>
 							<label>Nº</label> <br> <input class="numero" type="text"
-								name="numero_casa" onkeypress='return SomenteNumero(event)' required>
+								name="numero_casa" onkeypress='return SomenteNumero(event)'
+								required>
 						</div>
 						<div>
 							<label>Complemento</label> <br> <input class="complemento"
@@ -129,21 +147,24 @@ function somente_letras(campo){
 						</div>
 						<div>
 							<label>Número do Cartão</label> <br> <input
-								class="numero-cartao" type="text" name="numero-cartao" onkeypress='return SomenteNumero(event)' required>
+								class="numero-cartao" type="text" name="numero-cartao"
+								onkeypress='return SomenteNumero(event)' required>
 						</div>
 					</div>
 					<br> <br> <br>
 					<div class="email-senha">
 						<label>E-mail</label> <br> <input class="email" type="email"
-							name="email"  required> <br> <br> <label>Senha</label> <br>
-						<input class="senha" type="password" name="senha" required> <br>
-						<br> <label>Confirmar Senha</label> <br> <input
-							class="confirma_senha" type="password" name="senha" required> <br>
-						<br> <br> <input type="submit" size="13"
-							value="CADASTRAR"><br>
+							name="email" required> <br> <br> <label>Senha</label>
+						<br> <input class="senha" type="password" name="senha"
+							required> <br> <br> <label>Confirmar
+							Senha</label> <br> <input class="confirma_senha" type="password"
+							name="senha" required> <br> <br> <br> <input
+							type="submit" size="13" class="cadastrar" value="CADASTRAR"><br>
+						﻿
 					</div>
 					<br> <br> <br> <br> <br> <br>
 				</form>
+
 			</div>
 			<footer id="rodape-pagina"> &copy; Cataclysm </footer>
 			</main>

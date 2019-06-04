@@ -19,7 +19,7 @@ public class Cartao implements Entidade {
 	@Column(name = "DS_BANDEIRA")
 	private String bandeira;
 	@Column(name = "NM_CARTAO")
-	private int numero;
+	private String numero;
 	
 
 	public String getBandeira() {
@@ -30,11 +30,11 @@ public class Cartao implements Entidade {
 		this.bandeira = bandeira;
 	}
 
-	public int getNumero() {
+	public String getNumero() {
 		return numero;
 	}
 
-	public void setNumero(int numero) {
+	public void setNumero(String numero) {
 		this.numero = numero;
 	}
 

@@ -1,5 +1,6 @@
 package br.com.artorys.modelo;
 
+import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -12,7 +13,7 @@ public class Usuario {
 	@Column(name = "CD_USUARIO")
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
-	@Column(name = "EM_USUARIO")
+	@Column(name = "EM_USUARIO", unique = true)	
 	private String email;
 	@Column(name = "NM_SENHA_USUARIO")
 	private String senha;

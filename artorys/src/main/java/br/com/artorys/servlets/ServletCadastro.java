@@ -44,7 +44,7 @@ public class ServletCadastro extends HttpServlet {
 			DAO dao = new DAO(JPAUtil.getEntityManager());
 			
 			cartao.setBandeira(request.getParameter("bandeira"));
-			cartao.setNumero(Integer.parseInt(request.getParameter("numero-cartao")));
+			cartao.setNumero(request.getParameter("numero-cartao"));
 			endereco.setCidade(request.getParameter("cidade"));
 			endereco.setBairro(request.getParameter("bairro"));
 			endereco.setCep(request.getParameter("cep"));

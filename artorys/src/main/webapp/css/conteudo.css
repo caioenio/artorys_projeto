@@ -59,6 +59,10 @@
     margin: 15px;
 }
 
+.redes-sociais a {
+	text-decoration:none;
+}
+
 .redes-sociais img{
     width: 30px;
     height: 30px;
