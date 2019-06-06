@@ -1,21 +1,4 @@
-.filtros {
-    width: 15%;
-    height: 100%;
-    float: left;
-    
+.imagem {
+	width: 128px;
+	height: 128px;
 }
-
-.produtos{
-    width: 85%;
-    height: 100%;
-    border-style: solid;
-    border-color: black;
-    border-width: 0px 2px 0px 0px;
-}
-
-label{
-    position: relative;
-    bottom: 100%;
-    left: 0;
-}
-
