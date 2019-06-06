@@ -1,6 +1,5 @@
 package br.com.artorys.modelo;
 
-import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;

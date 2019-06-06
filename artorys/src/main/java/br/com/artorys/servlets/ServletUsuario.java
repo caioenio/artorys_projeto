@@ -14,7 +14,6 @@ import br.com.artorys.dao.DAO;
 import br.com.artorys.modelo.Cartao;
 import br.com.artorys.modelo.Cliente;
 import br.com.artorys.modelo.Endereco;
-import br.com.artorys.util.JPAUtil;
 
 @WebServlet(urlPatterns = "/cadastro")
 public class ServletUsuario extends HttpServlet {
@@ -41,7 +40,7 @@ public class ServletUsuario extends HttpServlet {
 			Endereco endereco = new Endereco();
 			Cartao cartao = new Cartao();
 			List<Cartao> cartoes = new ArrayList<Cartao>(); 
-			DAO dao = new DAO(JPAUtil.getEntityManager());
+			DAO dao = new DAO();
 			
 			cartao.setBandeira(request.getParameter("bandeira"));
 			cartao.setNumero(request.getParameter("numero-cartao"));

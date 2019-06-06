@@ -1,17 +1,20 @@
 package br.com.artorys.dao;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.persistence.EntityManager;
+import javax.persistence.EntityTransaction;
+import javax.persistence.TypedQuery;
 
 import br.com.artorys.interfaces.Entidade;
 import br.com.artorys.interfaces.InterfaceDAO;
+import br.com.artorys.modelo.Cliente;
+import br.com.artorys.util.JPAUtil;
 
 public class DAO implements InterfaceDAO {
 
-	private EntityManager em;
-	
-	public  DAO(EntityManager em) {
-		this.em = em;
-	}
+	EntityManager em = JPAUtil.getEntityManager();
 
 	public void Insert(Entidade entidade) {
 		em.getTransaction().begin();
@@ -41,4 +44,30 @@ public class DAO implements InterfaceDAO {
 		return null;
 	}
 
+	public ArrayList<Cliente> BuscarCliente() {
+		
+		Cliente ce = new Cliente();
+
+		List<Cliente> retorno;
+		String query = "select c from Cliente c where c.nome = :nome and c.senha = :senha";
+
+		EntityManager manager = JPAUtil.getEntityManager();
+		EntityTransaction transacao = manager.getTransaction();
+		transacao.begin();
+
+		TypedQuery<Cliente> cli = manager.createQuery(query, Cliente.class);
+		
+		cli.setParameter("nome",ce.getNome());
+		cli.setParameter("senha",ce.getSenha());
+
+		List<Cliente> c = cli.getResultList();
+
+		transacao.commit();
+		manager.close();
+
+		retorno = c;
+
+		return (ArrayList<Cliente>) retorno;
+
+	}
 }
