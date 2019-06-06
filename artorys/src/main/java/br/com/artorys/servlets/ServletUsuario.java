@@ -17,7 +17,7 @@ import br.com.artorys.modelo.Endereco;
 import br.com.artorys.util.JPAUtil;
 
 @WebServlet(urlPatterns = "/cadastro")
-public class ServletCadastro extends HttpServlet {
+public class ServletUsuario extends HttpServlet {
 	/**
 	 * 
 	 */
