@@ -44,9 +44,8 @@ public class DAO implements InterfaceDAO {
 		return null;
 	}
 
-	public ArrayList<Cliente> BuscarCliente() {
+	public ArrayList<Cliente> BuscarCliente(Cliente cliente) {
 		
-		Cliente ce = new Cliente();
 
 		List<Cliente> retorno;
 		String query = "select c from Cliente c where c.nome = :nome and c.senha = :senha";
@@ -57,8 +56,8 @@ public class DAO implements InterfaceDAO {
 
 		TypedQuery<Cliente> cli = manager.createQuery(query, Cliente.class);
 		
-		cli.setParameter("nome",ce.getNome());
-		cli.setParameter("senha",ce.getSenha());
+		cli.setParameter("nome",cliente.getNome());
+		cli.setParameter("senha",cliente.getSenha());
 
 		List<Cliente> c = cli.getResultList();
 
