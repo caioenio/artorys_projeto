@@ -11,15 +11,19 @@ import br.com.artorys.interfaces.Entidade;
 
 @Entity
 public class Cliente extends Usuario implements Entidade {
+	
 	@Column(name = "DS_TELEFONE")
 	private String telefone;
+	
 	@Column(name = "NM_CPF")
 	private String cpf;
+	
 	@Column(name = "DS_SEXO")
 	private String sexo;
 	
 	@OneToOne(mappedBy = "cliente")
 	private Endereco endereco;
+	
 	@OneToMany(mappedBy = "cliente")
 	private List<Cartao> cartao;
 

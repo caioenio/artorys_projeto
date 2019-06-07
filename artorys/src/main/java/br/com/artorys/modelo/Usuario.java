@@ -8,20 +8,27 @@ import javax.persistence.MappedSuperclass;
 
 @MappedSuperclass
 public class Usuario {
+	
 	@Id
 	@Column(name = "CD_USUARIO")
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
+	
 	@Column(name = "EM_USUARIO", unique = true)	
 	private String email;
+	
 	@Column(name = "NM_SENHA_USUARIO")
 	private String senha;
+	
 	@Column(name = "DS_USUARIO")
 	private String nome;
+	
 	@Column(name = "DS_SOBRENOME")
 	private String sobrenome;
+	
 	@Column(name = "Ds_Nascimento")
 	private String dt_nascimento;
+	
 	@Column(name = "Ds_SEXO")
 	private String sexo;
 

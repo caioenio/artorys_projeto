@@ -24,7 +24,7 @@ public class ServletLogin extends HttpServlet {
 		String password = request.getParameter("senha");
 
 		if (name.equals("caio") && password.equals("caio")) {
-			request.getRequestDispatcher("/front/produtos.html").include(request, response);
+			request.getRequestDispatcher("/front/homelogin.html").include(request, response);
 		} else {
 			PrintWriter out = response.getWriter();
 			response.setContentType("text/html");
