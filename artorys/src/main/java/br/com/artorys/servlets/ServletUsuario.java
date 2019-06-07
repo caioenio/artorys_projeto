@@ -1,6 +1,7 @@
 package br.com.artorys.servlets;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -65,6 +66,12 @@ public class ServletUsuario extends HttpServlet {
 			dao.Insert(cartao);
 			dao.Insert(endereco);
 			dao.Insert(cliente);
+			PrintWriter out = response.getWriter();
+			response.setContentType("text/html");
+			out.println("<script type=\"text/javascript\">");
+			out.println("alert('CADASTRO FEITO COM SUCESSO');");
+			out.println("</script>");
+			request.getRequestDispatcher("/front/home.html").include(request, response);
 			
 	}
 
