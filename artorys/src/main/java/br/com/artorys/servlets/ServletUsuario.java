@@ -15,6 +15,8 @@ import br.com.artorys.dao.DAO;
 import br.com.artorys.modelo.Cartao;
 import br.com.artorys.modelo.Cliente;
 import br.com.artorys.modelo.Endereco;
+import br.com.artorys.servicos.UsuarioServico;
+import br.com.artorys.util.JPAUtil;
 
 @WebServlet(urlPatterns = "/cadastro")
 public class ServletUsuario extends HttpServlet {
@@ -41,7 +43,9 @@ public class ServletUsuario extends HttpServlet {
 			Endereco endereco = new Endereco();
 			Cartao cartao = new Cartao();
 			List<Cartao> cartoes = new ArrayList<Cartao>(); 
-			DAO dao = new DAO();
+			DAO dao = new DAO(JPAUtil.getEntityManager());
+			
+			
 			
 			cartao.setBandeira(request.getParameter("bandeira"));
 			cartao.setNumero(request.getParameter("numero-cartao"));
@@ -63,16 +67,28 @@ public class ServletUsuario extends HttpServlet {
 			cliente.setEndereco(endereco);
 			cartoes.add(cartao);
 			cliente.setCartao(cartoes);
-			dao.Insert(cartao);
-			dao.Insert(endereco);
-			dao.Insert(cliente);
-			PrintWriter out = response.getWriter();
-			response.setContentType("text/html");
-			out.println("<script type=\"text/javascript\">");
-			out.println("alert('CADASTRO FEITO COM SUCESSO');");
-			out.println("</script>");
-			request.getRequestDispatcher("/front/home.html").include(request, response);
-			
+						
+			if (!UsuarioServico.verificaEmail(cliente)) {
+				dao.Insert(cartao);
+				
+				dao.Insert(endereco);
+				dao.Insert(cliente);
+				PrintWriter out = response.getWriter();
+				response.setContentType("text/html");
+				out.println("<script type=\"text/javascript\">");
+				out.println("alert('CADASTRO FEITO COM SUCESSO');");
+				out.println("</script>");
+				request.getRequestDispatcher("/front/home.html").include(request, response);
+				
+			}else {
+				PrintWriter out = response.getWriter();
+				response.setContentType("text/html");
+				out.println("<script type=\"text/javascript\">");
+				out.println("alert('Email já cadastrado!');");
+				out.println("</script>");
+				request.getRequestDispatcher("/front/cadastro.html").include(request, response);
+				
+			}
 	}
 
 }

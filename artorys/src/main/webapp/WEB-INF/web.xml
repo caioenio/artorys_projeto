@@ -8,9 +8,20 @@
 		<servlet-name>ServletCompra</servlet-name>
 		<servlet-class>br.com.artorys.servlets.ServletCompra</servlet-class>
 	</servlet>
+	<servlet>
+		<description>
+		</description>
+		<display-name>ServletComprar</display-name>
+		<servlet-name>ServletComprar</servlet-name>
+		<servlet-class>br.com.artorys.servlets.ServletComprar</servlet-class>
+	</servlet>
 	<servlet-mapping>
 		<servlet-name>ServletCompra</servlet-name>
 		<url-pattern>/ServletCompra</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>ServletComprar</servlet-name>
+		<url-pattern>/ServletComprar</url-pattern>
 	</servlet-mapping>
 	<welcome-file-list>
 		<welcome-file>index.html</welcome-file>

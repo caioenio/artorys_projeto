@@ -24,5 +24,4 @@ public class JPAUtil {
 	public static void closeEntityManagerFactory() {
 		emf.close();
 	}
-
 }

@@ -14,7 +14,11 @@ import br.com.artorys.util.JPAUtil;
 
 public class DAO implements InterfaceDAO {
 
-	EntityManager em = JPAUtil.getEntityManager();
+	EntityManager em;
+	
+	public DAO(EntityManager em) {
+		this.em = em;
+	}
 
 	public void Insert(Entidade entidade) {
 		em.getTransaction().begin();
@@ -42,31 +46,5 @@ public class DAO implements InterfaceDAO {
 		em.getTransaction().commit();
 
 		return null;
-	}
-
-	public ArrayList<Cliente> BuscarCliente(Cliente cliente) {
-		
-
-		List<Cliente> retorno;
-		String query = "select c from Cliente c where c.nome = :nome and c.senha = :senha";
-
-		EntityManager manager = JPAUtil.getEntityManager();
-		EntityTransaction transacao = manager.getTransaction();
-		transacao.begin();
-
-		TypedQuery<Cliente> cli = manager.createQuery(query, Cliente.class);
-		
-		cli.setParameter("nome",cliente.getNome());
-		cli.setParameter("senha",cliente.getSenha());
-
-		List<Cliente> c = cli.getResultList();
-
-		transacao.commit();
-		manager.close();
-
-		retorno = c;
-
-		return (ArrayList<Cliente>) retorno;
-
 	}
 }

@@ -2,7 +2,6 @@ package br.com.artorys.servlets;
 
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.ArrayList;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -10,8 +9,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import br.com.artorys.dao.DAO;
 import br.com.artorys.modelo.Cliente;
+import br.com.artorys.servicos.UsuarioServico;
 
 @WebServlet(urlPatterns = "/login")
 public class ServletLogin extends HttpServlet {
@@ -24,25 +23,21 @@ public class ServletLogin extends HttpServlet {
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		String nome = request.getParameter("email");
+		String nome = request.getParameter("nome");
 		String senha = request.getParameter("senha");
 		
+		
 		Cliente cliente = new Cliente();
-		DAO dao = new DAO();
 		
 		cliente.setNome(nome);
 		cliente.setSenha(senha);
+		cliente.setEmail(nome);
 
-		ArrayList<Cliente> clientes = dao.BuscarCliente(cliente);
-
-		for (Cliente cliente1 : clientes) {
-			System.out.println("Nome:" + cliente1.getNome());
-			System.out.println("Senha:" + cliente1.getSenha());
-		}
-		
-
-		if (nome == cliente.getNome() && senha == cliente.getSenha()) {
-			request.getRequestDispatcher("/front/homelogin.html").include(request, response);
+		if (UsuarioServico.verificaEmail(cliente)) {
+			if (UsuarioServico.verificaSenha(cliente)) {
+				
+				request.getRequestDispatcher("/front/homelogin.html").include(request, response);
+			}
 		} else {
 			PrintWriter out = response.getWriter();
 			response.setContentType("text/html");
@@ -52,5 +47,7 @@ public class ServletLogin extends HttpServlet {
 			request.getRequestDispatcher("/front/home.html").include(request, response);
 		}
 	}
+	
+	
 
 }
