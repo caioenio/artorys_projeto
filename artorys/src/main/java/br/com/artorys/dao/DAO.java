@@ -1,21 +1,13 @@
 package br.com.artorys.dao;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import javax.persistence.EntityManager;
-import javax.persistence.EntityTransaction;
-import javax.persistence.TypedQuery;
-
 import br.com.artorys.interfaces.Entidade;
 import br.com.artorys.interfaces.InterfaceDAO;
-import br.com.artorys.modelo.Cliente;
-import br.com.artorys.util.JPAUtil;
 
 public class DAO implements InterfaceDAO {
 
 	EntityManager em;
-	
+
 	public DAO(EntityManager em) {
 		this.em = em;
 	}

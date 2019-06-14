@@ -25,17 +25,15 @@ public class ServletLogin extends HttpServlet {
 			throws ServletException, IOException {
 		String nome = request.getParameter("nome");
 		String senha = request.getParameter("senha");
-		
-		
+
 		Cliente cliente = new Cliente();
-		
+
 		cliente.setNome(nome);
 		cliente.setSenha(senha);
 		cliente.setEmail(nome);
 
 		if (UsuarioServico.verificaEmail(cliente)) {
 			if (UsuarioServico.verificaSenha(cliente)) {
-				
 				request.getRequestDispatcher("/front/homelogin.html").include(request, response);
 			}
 		} else {
@@ -47,7 +45,5 @@ public class ServletLogin extends HttpServlet {
 			request.getRequestDispatcher("/front/home.html").include(request, response);
 		}
 	}
-	
-	
 
 }

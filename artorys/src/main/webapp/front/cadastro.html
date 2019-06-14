@@ -16,7 +16,7 @@
 		}
 	}
 	function somente_letras(campo) {
-		var digits = " AaáâãBbCcDdEeéêFfGgHhIiíîJjKkLlMmNnOoõóôPpQqRrSsTtUuúûVvXxWwYyýZz"
+		var digits = " AaáâãBbCcçÇDdEeéêFfGgHhIiíîJjKkLlMmNnOoõóôPpQqRrSsTtUuúûVvXxWwYyýZz"
 		var campo_temp
 		for (var i = 0; i < campo.value.length; i++) {
 			campo_temp = campo.value.substring(i, i + 1)
@@ -59,107 +59,31 @@
 				<br>
 				<br>
 				<form name="form" action="/artorys/cadastro" method="post">
-					<label>Nome</label> <br> <input type="text" name="nome"
+					<label>NOME</label> <br> <input type="text" name="nome"
 						onKeyUp="javascript:somente_letras(this);" required> <br>
-					<br> <label>Sobrenome</label> <br> <input type="text"
+					<br> <label>SOBRENOME</label> <br> <input type="text"
 						name="sobrenome" onKeyUp="javascript:somente_letras(this);"
-						required> <br> <br> <label>Data de
-						nascimento</label> <br> <input type="date" name="nascimento" required>
-					<br> <br> <label>Sexo</label> <br> <select
+						required> <br> <br> <label>DATA DE
+						NASCIMENTO</label> <br> <input type="date" name="nascimento" required>
+					<br> <br> <label>SEXO</label> <br> <select
 						class="precos" name="sexo" required>
-						<option>selecionar</option>
-						<option>Masculino</option>
-						<option>Feminino</option>
+						<option>SELECIONAR</option>
+						<option>MASCULINO</option>
+						<option>FEMININO</option>
 					</select> <br> <br> <label>CPF</label> <br> <input
-						type="text" name="cpf" onkeypress='return SomenteNumero(event)'
-						required> <br> <br> <label>Telefone</label> <br>
-					<input type="text" name="telefone"
-						onkeypress='return SomenteNumero(event)' required> <br>
+						type="text" name="cpf" pattern="\d{3}\.\d{3}\.\d{3}-\d{2}" title="Digite o CPF no formato nnn.nnn.nnn-nn"
+						required> <br> <br> <label>TELEFONE</label> <br>
+					<input type="text" name="telefone" pattern="\d{5}\-\d{4}" title="Digite o TELEFONE no formato 9nnnn-nnnn"
+					 required> <br>
 					<br>
-					<div class="endereco">
-						<div>
-							<label>estado</label> <br> <select name="estados-brasil"
-								required>
-								<option value="AC">Acre</option>
-								<option value="AL">Alagoas</option>
-								<option value="AP">Amapá</option>
-								<option value="AM">Amazonas</option>
-								<option value="BA">Bahia</option>
-								<option value="CE">Ceará</option>
-								<option value="DF">Distrito Federal</option>
-								<option value="ES">Espírito Santo</option>
-								<option value="GO">Goiás</option>
-								<option value="MA">Maranhão</option>
-								<option value="MT">Mato Grosso</option>
-								<option value="MS">Mato Grosso do Sul</option>
-								<option value="MG">Minas Gerais</option>
-								<option value="PA">Pará</option>
-								<option value="PB">Paraíba</option>
-								<option value="PR">Paraná</option>
-								<option value="PE">Pernambuco</option>
-								<option value="PI">Piauí</option>
-								<option value="RJ">Rio de Janeiro</option>
-								<option value="RN">Rio Grande do Norte</option>
-								<option value="RS">Rio Grande do Sul</option>
-								<option value="RO">Rondônia</option>
-								<option value="RR">Roraima</option>
-								<option value="SC">Santa Catarina</option>
-								<option value="SP">São Paulo</option>
-								<option value="SE">Sergipe</option>
-								<option value="TO">Tocantins</option>
-							</select>
-						</div>
-						<div>
-							<label>Cidade</label> <br> <input type="text" name="cidade"
-								onKeyUp="javascript:somente_letras(this);" required>
-						</div>
-						<div>
-							<label>Bairro</label> <br> <input type="text" name="bairro"
-								onKeyUp="javascript:somente_letras(this);" required>
-						</div>
-						<div>
-							<label>CEP</label> <br> <input class="cep" type="text"
-								name="cep" onkeypress='return SomenteNumero(event)' required>
-						</div>
-						<div>
-							<label>Rua</label> <br> <input class="rua" type="text"
-								name="rua" required>
-						</div>
-						<div>
-							<label>Nº</label> <br> <input class="numero" type="text"
-								name="numero_casa" onkeypress='return SomenteNumero(event)'
-								required>
-						</div>
-						<div>
-							<label>Complemento</label> <br> <input class="complemento"
-								type="text" name="complemento" required>
-						</div>
-					</div>
-					<br>
-					<div class="div-cartao">
-						<div>
-							<label>Bandeira</label> <br> <select class="tipo-cartao"
-								name="bandeira" required>
-								<option>selecionar</option>
-								<option>Visa</option>
-								<option>MasterCard</option>
-							</select>
-						</div>
-						<div>
-							<label>Número do Cartão</label> <br> <input
-								class="numero-cartao" type="text" name="numero-cartao"
-								onkeypress='return SomenteNumero(event)' required>
-						</div>
-					</div>
-					<br> <br> <br>
 					<div class="email-senha">
-						<label>E-mail</label> <br> <input class="email" type="email"
-							name="email" required> <br> <br> <label>Senha</label>
+						<label>E-MAIL</label> <br> <input class="email" type="email"
+							name="email" required> <br> <br> <label>SENHA</label>
 						<br> <input class="senha" type="password" name="senha"
-							required> <br> <br> <label>Confirmar
-							Senha</label> <br> <input class="confirma_senha" type="password"
+							required> <br> <br> <label>CONFIRMAR
+							SENHA</label> <br> <input class="confirma_senha" type="password"
 							name="senha" required> <br> <br> <br> <input
-							type="submit" size="13" class="cadastrar" value="CADASTRAR"><br>
+							type="submit" size="13" class="cadastrar" value="Cadastrar"><br>
 						﻿
 					</div>
 					<br> <br> <br> <br> <br> <br>

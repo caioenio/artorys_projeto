@@ -1,6 +1,5 @@
 package br.com.artorys.modelo;
 
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -12,6 +11,7 @@ import br.com.artorys.interfaces.Entidade;
 
 @Entity
 public class Cartao implements Entidade {
+	
 	@Id
 	@Column(name = "CD_CARTAO")
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -20,8 +20,27 @@ public class Cartao implements Entidade {
 	private String bandeira;
 	@Column(name = "NM_CARTAO")
 	private String numero;
+	@Column(name = "NM_CODIGOSEGURANCA")
+	private String codigoseguranca;
+	@Column(name = "NM_IMPRESSOCARTAO")
+	private String nomeimpresso;
 	
 
+	public String getNomeimpresso() {
+		return nomeimpresso;
+	}
+
+	public void setNomeimpresso(String nomeimpresso) {
+		this.nomeimpresso = nomeimpresso;
+	}
+
+	public String getCodigoseguranca() {
+		return codigoseguranca;
+	}
+
+	public void setCodigoseguranca(String codigoseguranca) {
+		this.codigoseguranca = codigoseguranca;
+	}
 	public String getBandeira() {
 		return bandeira;
 	}
