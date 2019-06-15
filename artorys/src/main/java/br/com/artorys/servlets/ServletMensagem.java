@@ -24,7 +24,7 @@ public class ServletMensagem extends HttpServlet {
 		out.println("<script type=\"text/javascript\">");
 		out.println("alert('Por favor, realize login para comprar');");
 		out.println("</script>");
-		request.getRequestDispatcher("/front/home.html").include(request, response);
+		request.getRequestDispatcher("/front/produtos.html").include(request, response);
 	}
 
 }
