@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset='utf-8'>
+<title>Compra</title>
+<script type="text/javascript">
+	function SomenteNumero(e) {
+		var tecla = (window.event) ? event.keyCode : e.which;
+		if ((tecla > 47 && tecla < 58))
+			return true;
+		else {
+			if (tecla == 8 || tecla == 0)
+				return true;
+			else
+				return false;
+		}
+	}
+	function somente_letras(campo) {
+		var digits = " AÁÂaáâãBbCcçÇDdEÉÊeéêFfGgHhIÍÎíiíîJjKkLlMmNnOoõóôPpQqRrSsTtUÚÛuúûVvXxWwYÝyýZz"
+		var campo_temp
+		for (var i = 0; i < campo.value.length; i++) {
+			campo_temp = campo.value.substring(i, i + 1)
+			if (digits.indexOf(campo_temp) == -1) {
+				campo.value = campo.value.substring(0, i);
+				break;
+			}
+		}
+function validar() {
+	
+	var ns = forcompra.numeroseguranca.value;
+	
+	if (ns > 11) {
+		alert("CPF não pode ter mais de 11 dígitos");
+		formcompra.numeroseguranca.focus();
+		return false;
+		
+	}
+	
+}
+	}
+</script>
+<link rel="icon" href="/artorys/imagem/40431.png">
+<link rel='stylesheet' href="/artorys/css/normalize.css">
+<link rel='stylesheet' href="/artorys/css/menu.css">
+<link rel='stylesheet' href="/artorys/css/rodape.css">
+<link rel='stylesheet' href="/artorys/css/principal.css">
+<link rel='stylesheet' href="/artorys/css/fundo.css">
+<link rel='stylesheet' href="/artorys/css/home.css">
+<link rel='stylesheet' href="/artorys/css/conteudo.css">
+<link rel='stylesheet' href="/artorys/css/cadastro.css">
+<link rel='stylesheet' href="/artorys/css/produto.css">
+<link href="https://fonts.googleapis.com/css?family=Cinzel&display=swap"
+	rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Ranga&display=swap"
+	rel="stylesheet">
+</head>
+
+<body>
+	<div class="fundo">
+		<div class="divisao_principal">
+
+			<div class="cabecalho-formulario">
+
+				<h1>Formulário de Compra</h1>
+			</div>
+			<div class="conteudo-pincipal">
+				<form name="formcompra" action="produtoslogin.html">
+					<input type="submit" class="cadastrar" value="Voltar">
+				</form>
+				<br>
+				<br>
+				<br>
+				<form name="form" action="/artorys/comprarhistoria" method="post">
+					<div class="endereco">
+						<div>
+							<label>ESTADOS</label> <br> <select name="estados-brasil"
+								required>
+								<option value="AC">Acre</option>
+								<option value="AL">Alagoas</option>
+								<option value="AP">Amapá</option>
+								<option value="AM">Amazonas</option>
+								<option value="BA">Bahia</option>
+								<option value="CE">Ceará</option>
+								<option value="DF">Distrito Federal</option>
+								<option value="ES">Espírito Santo</option>
+								<option value="GO">Goiás</option>
+								<option value="MA">Maranhão</option>
+								<option value="MT">Mato Grosso</option>
+								<option value="MS">Mato Grosso do Sul</option>
+								<option value="MG">Minas Gerais</option>
+								<option value="PA">Pará</option>
+								<option value="PB">Paraíba</option>
+								<option value="PR">Paraná</option>
+								<option value="PE">Pernambuco</option>
+								<option value="PI">Piauí</option>
+								<option value="RJ">Rio de Janeiro</option>
+								<option value="RN">Rio Grande do Norte</option>
+								<option value="RS">Rio Grande do Sul</option>
+								<option value="RO">Rondônia</option>
+								<option value="RR">Roraima</option>
+								<option value="SC">Santa Catarina</option>
+								<option value="SP">São Paulo</option>
+								<option value="SE">Sergipe</option>
+								<option value="TO">Tocantins</option>
+							</select>
+						</div>
+						<div>
+							<label>CIDADE</label> <br> <input type="text" name="cidade"
+								onKeyUp="javascript:somente_letras(this);" required> <br>
+						</div>
+						<div>
+							<label>BAIRRO</label> <br> <input type="text" name="bairro"
+								onKeyUp="javascript:somente_letras(this);" required>
+						</div>
+						<div>
+							<label>CEP</label> <br> <input class="cep" type="text"
+								name="cep" pattern="[0-9]{8}" title="Digite o CEP no formato 00000-000" required>
+						</div>
+						<div>
+							<label>RUA</label> <br> <input class="rua" type="text"
+								name="rua" onkeypress='return SomenteNumero(event)' required>
+						</div>
+						<div>
+							<label>Nº</label> <br> <input class="numero" type="text"
+								name="numero_casa" onkeypress='return SomenteNumero(event)'
+								required>
+						</div>
+						<div>
+							<label>COMPLEMENTO</label> <br> <input class="complemento"
+								type="text" name="complemento" required>
+						</div>
+					</div>
+					<br>
+					<div class="div-cartao">
+						<div>
+							<label>BANDEIRA</label> <br> <select class="tipo-cartao"
+								name="bandeira" required>
+								<option>SELECIONAR</option>
+								<option>Visa</option>
+								<option>MasterCard</option>
+							</select>
+						</div>
+						<div>
+							<label>NÚMERO DO CARTÃO</label> <br> <input
+								class="numero-cartao" type="text" name="numero-cartao" onkeypress='return SomenteNumero(event)' pattern="\d{16}" title="Digite o Número no formato de 16 números " required>
+						</div>
+						<br>
+						<div>
+							<label>NOME IMPRESSO NO CARTÃO</label> <br> <input type="text" name="nome" onKeyUp="javascript:somente_letras(this);" required> <br>
+						</div>
+						<br>
+						<br>
+						<div>
+							<label>NÚMERO DE SEGURANÇA</label> <br> <input
+								class="numero-cartao" type="text" name="numeroseguranca" onkeypress='return SomenteNumero(event)' pattern="\d{3}" title="Digite o Número no formato de 3 números"required>
+						</div>
+					</div>
+					<br> <br> <br>
+					<div class="email-senha">
+						 <br> <br> <br> <input type="submit" size="13" class="cadastrar" value="Realizar Compra"><br>﻿
+					</div>
+					<br> <br> <br> <br> <br> <br>
+				</form>
+
+			</div>
+			<footer id="rodape-pagina"> &copy; Cataclysm </footer>
+			</main>
+		</div>
+	</div>
+</body>
+
+</html>

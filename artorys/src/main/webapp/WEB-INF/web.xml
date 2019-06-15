@@ -15,6 +15,13 @@
 		<servlet-name>ServletComprar</servlet-name>
 		<servlet-class>br.com.artorys.servlets.ServletComprar</servlet-class>
 	</servlet>
+	<servlet>
+		<description>
+		</description>
+		<display-name>ServletHistoria</display-name>
+		<servlet-name>ServletHistoria</servlet-name>
+		<servlet-class>br.com.artorys.servlets.ServletHistoria</servlet-class>
+	</servlet>
 	<servlet-mapping>
 		<servlet-name>ServletCompra</servlet-name>
 		<url-pattern>/ServletCompra</url-pattern>
@@ -22,6 +29,10 @@
 	<servlet-mapping>
 		<servlet-name>ServletComprar</servlet-name>
 		<url-pattern>/ServletComprar</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>ServletHistoria</servlet-name>
+		<url-pattern>/ServletHistoria</url-pattern>
 	</servlet-mapping>
 	<welcome-file-list>
 		<welcome-file>index.html</welcome-file>
