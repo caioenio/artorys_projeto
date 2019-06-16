@@ -16,15 +16,31 @@ public class Cartao implements Entidade {
 	@Column(name = "CD_CARTAO")
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int codigo;
+	
+	@Column(name = "DS_PRODUTOCOMPRADO")
+	private String produtocomprado;
+	
 	@Column(name = "DS_BANDEIRA")
 	private String bandeira;
+	
 	@Column(name = "NM_CARTAO")
 	private String numero;
+	
 	@Column(name = "NM_CODIGOSEGURANCA")
 	private String codigoseguranca;
+	
 	@Column(name = "NM_IMPRESSOCARTAO")
 	private String nomeimpresso;
 	
+	
+
+	public String getProdutocomprado() {
+		return produtocomprado;
+	}
+
+	public void setProdutocomprado(String produtocomprado) {
+		this.produtocomprado = produtocomprado;
+	}
 
 	public String getNomeimpresso() {
 		return nomeimpresso;

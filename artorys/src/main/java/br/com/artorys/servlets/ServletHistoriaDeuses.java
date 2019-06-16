@@ -24,6 +24,7 @@ public class ServletHistoriaDeuses extends HttpServlet {
 		Endereco endereco = new Endereco();
 		DAO dao = new DAO(JPAUtil.getEntityManager());
 		
+		
 		endereco.setEstado(request.getParameter("estados-brasil"));
 		endereco.setCidade(request.getParameter("cidade"));
 		endereco.setBairro(request.getParameter("bairro"));
@@ -35,6 +36,7 @@ public class ServletHistoriaDeuses extends HttpServlet {
 		cartao.setNumero(request.getParameter("numero-cartao"));
 		cartao.setNomeimpresso(request.getParameter("nome"));
 		cartao.setCodigoseguranca(request.getParameter("numeroseguranca"));
+		cartao.setProdutocomprado("História de Deuses");
 		dao.Insert(endereco);
 		dao.Insert(cartao);
 		PrintWriter out = response.getWriter();

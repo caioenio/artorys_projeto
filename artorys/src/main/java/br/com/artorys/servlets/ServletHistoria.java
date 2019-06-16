@@ -35,6 +35,7 @@ public class ServletHistoria extends HttpServlet {
 		cartao.setNumero(request.getParameter("numero-cartao"));
 		cartao.setNomeimpresso(request.getParameter("nome"));
 		cartao.setCodigoseguranca(request.getParameter("numeroseguranca"));
+		cartao.setProdutocomprado("História Mitologia NÓRDICA");
 		dao.Insert(endereco);
 		dao.Insert(cartao);
 		PrintWriter out = response.getWriter();
