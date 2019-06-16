@@ -40,6 +40,7 @@ public class ServletCompra extends HttpServlet {
 		cartao.setNumero(request.getParameter("numero-cartao"));
 		cartao.setNomeimpresso(request.getParameter("nome"));
 		cartao.setCodigoseguranca(request.getParameter("numeroseguranca"));
+		cartao.setProdutocomprado("Livro");
 		dao.Insert(endereco);
 		dao.Insert(cartao);
 		PrintWriter out = response.getWriter();
