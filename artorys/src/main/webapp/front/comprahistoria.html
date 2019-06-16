@@ -114,11 +114,11 @@ function validar() {
 						</div>
 						<div>
 							<label>CEP</label> <br> <input class="cep" type="text"
-								name="cep" pattern="[0-9]{8}" title="Digite o CEP no formato 00000-000" required>
+								name="cep" onkeypress='return SomenteNumero(event)' pattern="[0-9]{8}" title="Digite o CEP no formato 00000-000" required>
 						</div>
 						<div>
 							<label>RUA</label> <br> <input class="rua" type="text"
-								name="rua" onkeypress='return SomenteNumero(event)' required>
+								name="rua" required>
 						</div>
 						<div>
 							<label>Nº</label> <br> <input class="numero" type="text"
