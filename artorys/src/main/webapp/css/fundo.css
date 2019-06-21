@@ -1,4 +1,7 @@
 .fundo {
-    background-image:  url('../imagem/fundo.png');
+    background-image: url(../imagem/galaxy.gif);
     background-attachment: fixed;
+    margin: 0;
+    padding: 0;
+    margin-top: -1em;
 }

@@ -1,4 +1,10 @@
 
+html{
+    font-family: 'verdana' !important;
+    margin:0;
+    padding:0;
+}
+
 input{
     border-radius: 5px;
     border: 1px solid #d0d0d0;  
@@ -31,9 +37,9 @@ fieldset {
 
 .menu ul li:hover {
     background-color: black;
-    border-radius: 10px;
+    height: 100%;
     margin: 0px;
-    padding: 6px;
+    padding: 8px;
 }
 
 
@@ -43,8 +49,8 @@ fieldset {
 
 .menu {
     margin-bottom: 10px;
-    border-style: solid;
+    /* border-style: solid; */
     border-color: black;
     border-width: 0px 0px 4px 0px;
-
+    background-color: #d0d0d0;
 }
