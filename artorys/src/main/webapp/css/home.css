@@ -8,8 +8,8 @@ h1 {
 
 blockquote{
     font-family: 'Ranga', cursive;
-    border-style: inset;
-    border-width: 5px;
+    border-radius: 10px;
+    border: 1px solid #d1d1d1;
     padding: 10px;
 }
 blockquote img{

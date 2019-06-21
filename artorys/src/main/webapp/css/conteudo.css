@@ -14,7 +14,7 @@
 .formulario-login {
     margin: auto;
     padding: 30px;
-    border-style: solid;
+    /*border-style: solid;*/
     border-color: black;
     border-width: 0px 0px 1px 0px;
 
@@ -33,12 +33,15 @@
 
 .conteudo-pincipal{
     width: 80%;
-    border-style: solid;
+    /*border-style: solid;*/
     border-color: black;
     border-width: 0px 2px 0px 0px;    
 }
 
- 
+ input[type="submit"], button{
+    cursor:pointer;
+ }
+
 .botao {
     width: 140px;
     height: 35px;
@@ -53,10 +56,11 @@
 .botao:hover{
   background-color: black;
   color: white;  
+  cursor:pointer;
 }
 
 .redes-sociais{
-    margin: 15px;
+   float: right;
 }
 
 .redes-sociais a {
